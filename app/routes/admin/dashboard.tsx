@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { Header, StatsCard, TripCard } from '../../../components';
 import { dashboardStats,user,allTrips } from '~/constants';
+console.log(allTrips)
 
 const {totalUsers,userJoined,totalTrips,tripsCreated,userRole} = dashboardStats;
 
@@ -42,9 +43,11 @@ const Dashboard = () => {
 <h1 className="text-xl font-semibold text-dark-100">Created Trips </h1>
 
       <div className="trip-grid">
+        
         {allTrips.slice(0,4).map(
-          (id ,names  ,itinerary,imageUrls,tags,
-           estimatedPrice,index) => (
+          ({id ,names  ,itinerary,imageUrls,tags,
+           estimatedPrice,index}) => (
+            
           <TripCard
           key={id}
           id={id.toString()}

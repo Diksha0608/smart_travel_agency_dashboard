@@ -156,7 +156,7 @@ export const dashboardStats = {
 export const allTrips = [{
   id: 1,
   name: "Tropical Rewind",
-  imageUrls: ["/assets/images/sample1.jpg"],
+  imageUrls: ["/assets/images/sample.jpeg"],
   itinerary: [{ location: "Thailand" }],
   tags: ["Adventure", "Culture"],
   travelStyle: "Solo",

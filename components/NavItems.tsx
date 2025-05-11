@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link,NavLink } from 'react-router';
-import logo from '../public/assets/icons/logo.svg'
+import logo from '/assets/icons/logo.svg'
 import { sidebarItems } from '~/constants';
 import { cn } from '~/lib/utils';
 
