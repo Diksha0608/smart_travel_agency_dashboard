@@ -1,20 +1,20 @@
-import { Client, Account,Databases,Storage } from "appwrite"
+import {Account, Client, Databases, Storage} from "appwrite";
 
-export const appwriteconfig = {
-  endpointUrl : import.meta.env.VITE_APPWRITE_API_ENDPOINT,
-  projectId : import.meta.env.VITE_APPWRITE_PROJECT_ID,
-  apiKey : import.meta.env.VITE_APPWRITE_API_KEY,
-  databaseId : import.meta.env.VITE_APPWRITE_DATABASE_ID,
-  userCollectionId : import.meta.env.VITE_APPWRITE_USERS_COLLECTION_ID,
-  tripCollectionId : import.meta.env.VITE_APPWRITE_TRIPS_COLLECTION_ID
+export const appwriteConfig = {
+  endpointUrl: import.meta.env.VITE_APPWRITE_API_ENDPOINT,
+  projectId: import.meta.env.VITE_APPWRITE_PROJECT_ID,
+  apiKey: import.meta.env.VITE_APPWRITE_API_KEY,
+  databaseId: import.meta.env.VITE_APPWRITE_DATABASE_ID,
+  userCollectionId: import.meta.env.VITE_APPWRITE_USERS_COLLECTION_ID,
+  tripCollectionId: import.meta.env.VITE_APPWRITE_TRIPS_COLLECTION_ID,
 }
 
 const client = new Client()
-  .setEndpoint(appwriteconfig.endpointUrl)
-  .setProject(appwriteconfig.projectId)
+  .setEndpoint(appwriteConfig.endpointUrl)
+  .setProject(appwriteConfig.projectId)
 
-const account = new Account(client)
-const database = new Databases(client)
-const storage = new Storage(client)
+const account = new Account(client);
+const database = new Databases(client);
+const storage = new Storage(client);
 
-export {account,database,storage,client}
+export { client, account, database, storage };
