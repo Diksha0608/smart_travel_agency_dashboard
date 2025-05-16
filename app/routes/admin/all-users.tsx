@@ -1,15 +1,16 @@
 import React from 'react';
 import { Header } from '../../../components';
+import { GridComponent } from '@syncfusion/ej2-react-grids';
 
 const AllUsers = () => {
   return (
-    <main className="dashboard wrapper">
+    <main className="all-users">
       <Header
-        title="Trips page"
-        description="Check out our current users in real time"
-      />
-      All users page contents
+        title="manage users"
+        description="filter , sort and access detailed users profile"      />
+      <GridComponent>
+
+      </GridComponent>
     </main>
   );
-};
 export default AllUsers;
