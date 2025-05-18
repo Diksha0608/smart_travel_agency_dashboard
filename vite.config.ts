@@ -6,9 +6,9 @@ import { sentryReactRouter, type SentryReactRouterBuildOptions } from '@sentry/r
 
 const sentryConfig: SentryReactRouterBuildOptions = {
   org: "js-mastery-luz",
-  project: "javascript-react",
+  project: "travel_agency",
   // An auth token is required for uploading source maps.
-  authToken: "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"
+  authToken: "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"
   // ...
 };
 

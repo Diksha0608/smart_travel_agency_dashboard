@@ -20,7 +20,7 @@ const AllUsers = ({loaderData} : Route.ComponentProps) => {
     <main className="all-users">
       <Header
         title="manage users"
-        description="filter , sort and access detailed users profile" />
+        description="filter , sort and access detailed users profiles" />
       <GridComponent dataSource={users} gridLines="None" >
         <ColumnsDirective>
           <ColumnDirective
@@ -30,7 +30,7 @@ const AllUsers = ({loaderData} : Route.ComponentProps) => {
           textAlign="Left"
           template={(props:UserData) => (
             <div className="flex items-center gap-1.5 px-4" >
-              <img src={props.imageUrl} alt="user" className="rounded-full size-8 expect-square" />
+              <img src={props.imageUrl} alt="user" className="rounded-full size-8 expect-square" referrerPolicy="no-referrer" />
               <span>{props.name}</span>
             </div>
           )}

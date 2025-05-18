@@ -81,4 +81,4 @@ export const handleError: HandleErrorFunction = (error, { request }) => {
 };
 
 
-export default Sentry.wrapSentryHandleRequest(handleRequest)
+export default Sentry.wrapSentryHandleRequest(handleRequest);
