@@ -6,7 +6,10 @@ const Trips = () => {
     <main className="all-users">
       <Header
         title="trips"
-        description="View and edit AI-generated travel plans" />
+        description="View and edit AI-generated travel plans"
+        ctaText="create a trip"
+        ctaUrl="/trips/create"
+      />
 
       </main>
   );
