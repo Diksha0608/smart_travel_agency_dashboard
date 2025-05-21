@@ -85,7 +85,7 @@ const CreateTrip = ({ loaderData }: Route.ComponentProps ) => {
       if(result?.id) navigate(`/trips/${result.id}`)
       else console.error('Failed to generate a trip')
     } catch (e) {
-      console.error('Error generating trip', e);
+      console.error('Error generating trip', e)
     } finally {
       setLoading(false)
     }
