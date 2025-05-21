@@ -85,14 +85,14 @@ export const action = async ({ request }: ActionFunctionArgs) => {
       appwriteConfig.tripCollectionId,
       ID.unique(),
       {
-        tripDetails: JSON.stringify(trip),
+        tripDetail: JSON.stringify(trip),
         createdAt: new Date().toISOString(),
         imageUrls,
         userId,
       }
     )
 
-    // const tripDetail = parseTripData(result.tripDetails) as Trip;
+    const tripDetail = parseTripData(result.tripDetails) as Trip;
     // const tripPrice = parseInt(tripDetail.estimatedPrice.replace('$', ''), 10)
     // const paymentLink = await createProduct(
     //   tripDetail.name,
@@ -110,8 +110,8 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     //     payment_link: paymentLink.url
     //   }
     // )
-    //
-    // return data({ id: result.$id })
+
+    return data({ id: result.$id })
   } catch (e) {
     console.error('Error generating travel plan: ', e);
   }
