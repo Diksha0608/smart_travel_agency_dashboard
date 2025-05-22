@@ -16,9 +16,9 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 
   return {
     trip,
-    allTrips: trips.allTrips.map(({ $id, tripDetails, imageUrls }) => ({
+    allTrips: trips.allTrips.map(({ $id, tripDetail, imageUrls }) => ({
       id: $id,
-      ...parseTripData(tripDetails),
+      ...parseTripData(tripDetail),
       imageUrls: imageUrls ?? []
     }))
   }
@@ -26,7 +26,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 
 const TripDetail = ({ loaderData }: Route.ComponentProps) => {
   const imageUrls = loaderData?.trip?.imageUrls || [];
-  const tripData = parseTripData(loaderData?.trip?.tripDetails);
+  const tripData = parseTripData(loaderData?.trip?.tripDetail);
 
   const {
     name, duration, itinerary, travelStyle,
