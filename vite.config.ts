@@ -5,6 +5,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import {sentryReactRouter, type SentryReactRouterBuildOptions} from "@sentry/react-router";
 
 const sentryConfig: SentryReactRouterBuildOptions = {
+
   org: "js-mastery-yx",
   project: "travel-agency",
   // An auth token is required for uploading source maps.
@@ -14,6 +15,7 @@ const sentryConfig: SentryReactRouterBuildOptions = {
 
 export default defineConfig(config => {
   return {
+    base: '/',
     plugins: [tailwindcss(), tsconfigPaths(), reactRouter(), sentryReactRouter(sentryConfig, config)],
     sentryConfig,
     ssr: {
