@@ -65,9 +65,10 @@ export const loginWithGoogle = async () => {
   try {
     account.createOAuth2Session(
       OAuthProvider.Google,
-      `${window.location.origin}/`,
-      `${window.location.origin}/404`
-    );
+      "https://smart-travel-agency-dashboard.onrender.com", "https://smart-travel-agency-dashboard.onrender.com/error");
+    //   `${window.location.origin}/`,
+    //   `${window.location.origin}/404`
+    // );
   } catch (error) {
     console.error("Error during OAuth2 session creation:", error);
   }
