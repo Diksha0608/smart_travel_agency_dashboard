@@ -15,7 +15,6 @@ const sentryConfig: SentryReactRouterBuildOptions = {
 
 export default defineConfig(config => {
   return {
-    base: '/',
     plugins: [tailwindcss(), tsconfigPaths(), reactRouter(), sentryReactRouter(sentryConfig, config)],
     sentryConfig,
     ssr: {

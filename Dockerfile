@@ -1,22 +1,25 @@
-FROM node:20-alpine AS development-dependencies-env
-COPY . /app
+# 1. Base image for dependencies
+FROM node:20-alpine AS deps
 WORKDIR /app
+COPY package*.json ./
 RUN npm ci
 
-FROM node:20-alpine AS production-dependencies-env
-COPY ./package.json package-lock.json /app/
+# 2. Build image
+FROM node:20-alpine AS builder
 WORKDIR /app
-RUN npm ci --omit=dev
+COPY . .
+COPY --from=deps /app/node_modules ./node_modules
+RUN npm run build || tail -n 100 ./build.log
 
-FROM node:20-alpine AS build-env
-COPY . /app/
-COPY --from=development-dependencies-env /app/node_modules /app/node_modules
-WORKDIR /app
-RUN npm run build
 
-FROM node:20-alpine
-COPY ./package.json package-lock.json /app/
-COPY --from=production-dependencies-env /app/node_modules /app/node_modules
-COPY --from=build-env /app/build /app/build
+# 3. Runtime image
+FROM node:20-alpine AS runner
 WORKDIR /app
-CMD ["npm", "run", "start"]
+
+# Copy only what's needed to run the app
+COPY --from=deps /app/node_modules ./node_modules
+COPY --from=builder /app/build ./build
+COPY package*.json ./
+
+# For production SSR:
+CMD ["npx", "react-router-serve", "./build/server/index.js"]
