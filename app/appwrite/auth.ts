@@ -65,7 +65,8 @@ export const loginWithGoogle = async () => {
   try {
     account.createOAuth2Session(
       OAuthProvider.Google,
-      "https://smart-travel-agency-dashboard.onrender.com", "https://smart-travel-agency-dashboard.onrender.com/error");
+      "https://fra.cloud.appwrite.io/v1",
+    "https://fra.cloud.appwrite.io/v1/error");
     //   `${window.location.origin}/`,
     //   `${window.location.origin}/404`
     // );
