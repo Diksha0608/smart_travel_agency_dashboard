@@ -65,11 +65,9 @@ export const loginWithGoogle = async () => {
   try {
     account.createOAuth2Session(
       OAuthProvider.Google,
-      "https://fra.cloud.appwrite.io/welcome",
-      "https://fra.cloud.appwrite.io/error");
-    //   `${window.location.origin}/`,
-    //   `${window.location.origin}/404`
-    // );
+      `${window.location.origin}`,
+      `${window.location.origin}/login`
+    );
   } catch (error) {
     console.error("Error during OAuth2 session creation:", error);
   }
