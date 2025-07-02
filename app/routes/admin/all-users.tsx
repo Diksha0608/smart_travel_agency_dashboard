@@ -20,7 +20,7 @@ const AllUsers = ({loaderData} : Route.ComponentProps) => {
     <main className="all-users">
       <Header
         title="manage users"
-        description="filter , sort and access detailed users profiles" />
+        description="" />
       <GridComponent dataSource={users} gridLines="None" >
         <ColumnsDirective>
           <ColumnDirective
